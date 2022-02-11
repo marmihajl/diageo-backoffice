@@ -1,0 +1,33 @@
+<div class="center-page">
+  <mat-card class="mat-elevation-z0">
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-error *ngIf="false">
+          Invalid Campaign product
+        </mat-error>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Campaign title" formControlName="campaignTitle" required>
+          <mat-error>
+            Please provide a valid title
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Date from</mat-label>
+          <input matInput formControlName="dateFrom" [matDatepicker]="dateFromPicker">
+          <mat-datepicker-toggle matSuffix [for]="dateFromPicker"></mat-datepicker-toggle>
+          <mat-datepicker #dateFromPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Date to</mat-label>
+          <input matInput formControlName="dateTo" [matDatepicker]="dateToPicker">
+          <mat-datepicker-toggle matSuffix [for]="dateToPicker"></mat-datepicker-toggle>
+          <mat-datepicker #dateToPicker></mat-datepicker>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <button class="submit" mat-raised-button color="primary">
+      <mat-icon>input</mat-icon>
+      SUBMIT
+    </button>
+  </mat-card>
+</div>

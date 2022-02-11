@@ -1,0 +1,9 @@
+export const LOGIN_PATH = 'login';
+export const USERS_PATH = 'users';
+export const PUBS_PATH = 'pubs';
+export const PRODUCTS_PATH = 'products';
+export const BRANDS_PATH = 'brands';
+export const CAMPAIGNS_PATH = 'campaigns';
+export const MESSAGES_PATH = 'messages';
+export const QUIZZES_PATH = 'quizzes';
+export const STATISTICS_PATH = 'statistics';
