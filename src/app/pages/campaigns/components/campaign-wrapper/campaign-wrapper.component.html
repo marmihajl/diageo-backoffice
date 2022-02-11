@@ -1,0 +1,17 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="List of campaigns">
+    <div class="mat-tab-container">
+      <app-http-table></app-http-table>
+    </div>
+  </mat-tab>
+  <mat-tab label="Add attributes to campaign">
+    <div class="mat-tab-container">
+      <app-campaign-attributes-create></app-campaign-attributes-create>
+    </div>
+  </mat-tab>
+  <mat-tab label="New campaign">
+    <div class="mat-tab-container">
+      <app-campaign-create></app-campaign-create>
+    </div>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,34 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="List of web users">
+    <div class="mat-page-label">
+      List of web users
+    </div>
+    <div class="mat-tab-container">
+      <app-http-table></app-http-table>
+    </div>
+  </mat-tab>
+  <mat-tab label="New web user">
+    <div class="mat-page-label">
+      New web user
+    </div>
+    <div class="mat-tab-container">
+      <app-user-web-create></app-user-web-create>
+    </div>
+  </mat-tab>
+  <mat-tab label="List of mobile app users">
+    <div class="mat-page-label">
+      List of mobile app users
+    </div>
+    <div class="mat-tab-container">
+      <app-http-table></app-http-table>
+    </div>
+  </mat-tab>
+  <mat-tab label="New mobile app user">
+    <div class="mat-page-label">
+      New mobile app user
+    </div>
+    <div class="mat-tab-container">
+      <app-user-mobile-create></app-user-mobile-create>
+    </div>
+  </mat-tab>
+</mat-tab-group>

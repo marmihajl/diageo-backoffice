@@ -1,0 +1,21 @@
+<div class="center-page">
+  <mat-card class="mat-elevation-z0">
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-error *ngIf="false">
+          Invalid Brand product article
+        </mat-error>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Brand name" formControlName="brandName" required>
+          <mat-error>
+            Please provide a valid name
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <button class="submit" mat-raised-button color="primary">
+      <mat-icon>input</mat-icon>
+      SUBMIT
+    </button>
+  </mat-card>
+</div>

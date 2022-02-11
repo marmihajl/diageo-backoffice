@@ -1,0 +1,101 @@
+<div class="layout" [ngClass]="{ 'theme-alternate': isDarkTheme }">
+  <header>
+    <mat-toolbar class="user-row" color="primary">
+      <div class="logo">
+        <span>DIAGEO</span>
+      </div>
+      <ng-container>
+        <div *ngIf="!(isScreenSmall$ | async); else menu" class="nav-wide">
+          <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">USERS</span>
+          </a>
+          <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">PUBS</span>
+          </a>
+          <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">PRODUCTS</span>
+          </a>
+          <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">BRANDS</span>
+          </a>
+          <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">CAMPAIGNS</span>
+          </a>
+          <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">MESSAGES</span>
+          </a>
+          <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">QUIZZES</span>
+          </a>
+          <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
+             routerLinkActive="mat-accent">
+            <span class="text">STATISTICS</span>
+          </a>
+        </div>
+        <ng-template #menu>
+          <button (click)="drawer.toggle()" mat-icon-button class="mat-flat-button" color="primary"
+                  aria-label="Menu button">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </ng-template>
+        <button mat-button class="mat-flat-button" color="primary">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </ng-container>
+    </mat-toolbar>
+  </header>
+  <main>
+    <mat-drawer-container class="layout-drawer" autosize>
+      <mat-drawer (click)="drawer.toggle()" [autoFocus]="false" class="drawer-options" #drawer mode="over">
+        <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
+          <span class="text">USERS</span>
+        </a>
+        <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
+          <span class="text">PUBS</span>
+        </a>
+        <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
+           routerLinkActive="mat-accent">
+          <span class="text">PRODUCTS</span>
+        </a>
+        <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
+          <span class="text">BRANDS</span>
+        </a>
+        <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
+           routerLinkActive="mat-accent">
+          <span class="text">CAMPAIGNS</span>
+        </a>
+        <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
+           routerLinkActive="mat-accent">
+          <span class="text">MESSAGES</span>
+        </a>
+        <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
+          <span class="text">QUIZZES</span>
+        </a>
+        <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
+           routerLinkActive="mat-accent">
+          <span class="text">STATISTICS</span>
+        </a>
+        <button mat-button class="mat-flat-button" color="primary">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </mat-drawer>
+      <div class="page-layout">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-container>
+  </main>
+  <footer>
+    <mat-toolbar class="small-row">
+      <div class="uppercase-font">
+        © DIAGEO APP 2022. | SUPPORT | LEGAL
+      </div>
+    </mat-toolbar>
+  </footer>
+</div>

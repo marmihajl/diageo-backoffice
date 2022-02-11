@@ -1,0 +1,36 @@
+.mat-tab-group {
+  height: 100%;
+}
+
+.mat-tab-body {
+  overflow: scroll;
+}
+
+.mat-tab-label {
+  font-size: 12px !important;
+  height: 32px !important;
+}
+
+.mat-tab-header {
+  background-color: #B9975B;
+}
+
+.mat-tab-label.mat-tab-label-active {
+  opacity: 1;
+  .mat-tab-label-content {
+    color: #222222;
+  }
+}
+
+.mat-sort-header-arrow {
+  color: white;
+}
+
+.mat-tab-container {
+  padding: 20px;
+}
+
+.mat-page-label {
+  padding: 20px 20px 0 20px;
+}
+

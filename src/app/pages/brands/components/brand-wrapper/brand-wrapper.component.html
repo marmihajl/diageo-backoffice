@@ -1,0 +1,26 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="List of brands">
+    <div class="mat-page-label">
+      List of brands
+    </div>
+    <div class="mat-tab-container">
+      <app-http-table></app-http-table>
+    </div>
+  </mat-tab>
+  <mat-tab label="New brand product article">
+    <div class="mat-page-label">
+      New brand product article
+    </div>
+    <div class="mat-tab-container">
+      <app-brand-product-article-create></app-brand-product-article-create>
+    </div>
+  </mat-tab>
+  <mat-tab label="New brand product">
+    <div class="mat-page-label">
+      New brand product
+    </div>
+    <div class="mat-tab-container">
+      <app-brand-product-create></app-brand-product-create>
+    </div>
+  </mat-tab>
+</mat-tab-group>
