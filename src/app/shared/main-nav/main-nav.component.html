@@ -1,5 +1,5 @@
 <div class="layout" [ngClass]="{ 'theme-alternate': isDarkTheme }">
-  <header>
+  <header *ngIf="isAuthenticated$ | async">
     <mat-toolbar class="user-row" color="primary">
       <div class="logo">
         <span>DIAGEO</span>
@@ -8,35 +8,35 @@
         <div *ngIf="!(isScreenSmall$ | async); else menu" class="nav-wide">
           <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary"
              routerLinkActive="mat-accent">
-            <span class="text">USERS</span>
+            USERS
           </a>
           <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary"
              routerLinkActive="mat-accent">
-            <span class="text">PUBS</span>
+            PUBS
           </a>
           <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
              routerLinkActive="mat-accent">
-            <span class="text">PRODUCTS</span>
+            PRODUCTS
           </a>
           <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary"
              routerLinkActive="mat-accent">
-            <span class="text">BRANDS</span>
+            BRANDS
           </a>
           <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            <span class="text">CAMPAIGNS</span>
+             routerLinkActive="mat-accent active-link">
+            CAMPAIGNS
           </a>
           <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
              routerLinkActive="mat-accent">
-            <span class="text">MESSAGES</span>
+            MESSAGES
           </a>
           <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary"
              routerLinkActive="mat-accent">
-            <span class="text">QUIZZES</span>
+            QUIZZES
           </a>
           <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
              routerLinkActive="mat-accent">
-            <span class="text">STATISTICS</span>
+            STATISTICS
           </a>
         </div>
         <ng-template #menu>
@@ -45,7 +45,7 @@
             <mat-icon>menu</mat-icon>
           </button>
         </ng-template>
-        <button mat-button class="mat-flat-button" color="primary">
+        <button (click)="logout()" mat-button class="mat-flat-button" color="primary">
           <mat-icon>logout</mat-icon>
         </button>
       </ng-container>
@@ -55,34 +55,34 @@
     <mat-drawer-container class="layout-drawer" autosize>
       <mat-drawer (click)="drawer.toggle()" [autoFocus]="false" class="drawer-options" #drawer mode="over">
         <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
-          <span class="text">USERS</span>
+          USERS
         </a>
         <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
-          <span class="text">PUBS</span>
+          PUBS
         </a>
         <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          <span class="text">PRODUCTS</span>
+          PRODUCTS
         </a>
         <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
-          <span class="text">BRANDS</span>
+          BRANDS
         </a>
         <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          <span class="text">CAMPAIGNS</span>
+          CAMPAIGNS
         </a>
         <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          <span class="text">MESSAGES</span>
+          MESSAGES
         </a>
         <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
           <span class="text">QUIZZES</span>
         </a>
         <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          <span class="text">STATISTICS</span>
+          STATISTICS
         </a>
-        <button mat-button class="mat-flat-button" color="primary">
+        <button (click)="logout()" mat-button class="mat-flat-button" color="primary">
           <mat-icon>logout</mat-icon>
         </button>
       </mat-drawer>
@@ -94,7 +94,7 @@
   <footer>
     <mat-toolbar class="small-row">
       <div class="uppercase-font">
-        © DIAGEO APP 2022. | SUPPORT | LEGAL
+        © DIAGEO APP 2022. &nbsp;&nbsp; | &nbsp;&nbsp; SUPPORT &nbsp;&nbsp; | &nbsp;&nbsp; LEGAL
       </div>
     </mat-toolbar>
   </footer>

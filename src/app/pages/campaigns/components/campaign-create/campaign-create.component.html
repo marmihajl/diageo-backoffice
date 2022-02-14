@@ -1,7 +1,7 @@
 <div class="center-page">
   <mat-card class="mat-elevation-z0">
-    <mat-card-content>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-card-content>
         <mat-error *ngIf="false">
           Invalid Campaign product
         </mat-error>
@@ -23,11 +23,14 @@
           <mat-datepicker-toggle matSuffix [for]="dateToPicker"></mat-datepicker-toggle>
           <mat-datepicker #dateToPicker></mat-datepicker>
         </mat-form-field>
-      </form>
-    </mat-card-content>
-    <button class="submit" mat-raised-button color="primary">
-      <mat-icon>input</mat-icon>
-      SUBMIT
-    </button>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="submit" mat-raised-button color="primary">
+          <mat-icon>input</mat-icon>
+          SUBMIT
+        </button>
+      </mat-card-actions>
+    </form>
+
   </mat-card>
 </div>
