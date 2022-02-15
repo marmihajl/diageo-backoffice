@@ -1,59 +1,71 @@
 <div class="layout" [ngClass]="{ 'theme-alternate': isDarkTheme }">
   <header *ngIf="isAuthenticated$ | async">
-    <mat-toolbar class="user-row" color="primary">
-      <div class="logo">
-        <span>DIAGEO</span>
-      </div>
-      <ng-container>
-        <div *ngIf="!(isScreenSmall$ | async); else menu" class="nav-wide">
-          <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            USERS
-          </a>
-          <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            PUBS
-          </a>
-          <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            PRODUCTS
-          </a>
-          <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            BRANDS
-          </a>
-          <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent active-link">
-            CAMPAIGNS
-          </a>
-          <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            MESSAGES
-          </a>
-          <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            QUIZZES
-          </a>
-          <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
-             routerLinkActive="mat-accent">
-            STATISTICS
-          </a>
+    <mat-toolbar color="primary">
+      <div *ngIf="!(isScreenSmall$ | async); else menu" class="nav-wrapper">
+        <div class="nav-wide-left">
+          <div class="logo">
+            <span>DIAGEO</span>
+          </div>
+          <div class="nav-wide-left-items">
+            <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent">
+              USERS
+            </a>
+            <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent">
+              PUBS
+            </a>
+            <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent">
+              PRODUCTS
+            </a>
+            <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent">
+              BRANDS
+            </a>
+            <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent active-link">
+              CAMPAIGNS
+            </a>
+            <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent">
+              MESSAGES
+            </a>
+            <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent">
+              QUIZZES
+            </a>
+            <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
+               routerLinkActive="mat-accent">
+              STATISTICS
+            </a>
+          </div>
         </div>
-        <ng-template #menu>
-          <button (click)="drawer.toggle()" mat-icon-button class="mat-flat-button" color="primary"
-                  aria-label="Menu button">
-            <mat-icon>menu</mat-icon>
+        <div class="nav-wide-right">
+          <div class="user">
+            <mat-icon>account_circle</mat-icon>
+            <span>ADMIN XY</span>
+          </div>
+          <button (click)="logout()" mat-button class="mat-flat-button" color="primary">
+            <mat-icon>logout</mat-icon>
           </button>
-        </ng-template>
-        <button (click)="logout()" mat-button class="mat-flat-button" color="primary">
-          <mat-icon>logout</mat-icon>
+        </div>
+      </div>
+      <ng-template #menu>
+        <button (click)="drawer.toggle()" mat-icon-button class="mat-flat-button" color="primary"
+                aria-label="Menu button">
+          <mat-icon>menu</mat-icon>
         </button>
-      </ng-container>
+      </ng-template>
     </mat-toolbar>
   </header>
   <main>
     <mat-drawer-container class="layout-drawer" autosize>
       <mat-drawer (click)="drawer.toggle()" [autoFocus]="false" class="drawer-options" #drawer mode="over">
+        <div class="user">
+          <mat-icon>account_circle</mat-icon>
+          <span>ADMIN XY</span>
+        </div>
         <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
           USERS
         </a>

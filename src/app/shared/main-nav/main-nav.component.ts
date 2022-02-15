@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fromEvent, Observable } from "rxjs";
 import { map, startWith } from "rxjs/operators";
+import { AuthService } from "../../services/auth/auth.service";
 
 @Component({
   selector: 'app-main-nav',
@@ -12,10 +13,13 @@ export class MainNavComponent implements OnInit {
   public title: string
 
   public isDarkTheme!: boolean;
-  public isScreenSmall$: Observable<boolean> | undefined
+  public isAuthenticated$: Observable<boolean> | undefined;
+  public isScreenSmall$: Observable<boolean> | undefined;
 
-  constructor () {
+  constructor (public authenticationService: AuthService) {
     this.title = 'DIAGEO'
+
+    this.isAuthenticated$ = this.authenticationService.isAuthenticated
   }
 
   ngOnInit () {
@@ -30,5 +34,9 @@ export class MainNavComponent implements OnInit {
     // Start off with the initial value use the isScreenSmall$ | async in the
     // view to get both the original value and the new value after resize.
     this.isScreenSmall$ = screenSizeChanged$.pipe(startWith(checkScreenSize()))
+  }
+
+  logout () {
+    this.authenticationService.logout();
   }
 }
