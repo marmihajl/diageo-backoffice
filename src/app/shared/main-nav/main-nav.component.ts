@@ -24,7 +24,7 @@ export class MainNavComponent implements OnInit {
 
   ngOnInit () {
     // Checks if screen size is less than 1024 pixels
-    const checkScreenSize = () => document.body.offsetWidth < 1024;
+    const checkScreenSize = () => document.body.offsetWidth < 1160;
 
     // Create observable from window resize event throttled so only fires every 500ms
     const screenSizeChanged$ = fromEvent(window, 'resize').pipe(

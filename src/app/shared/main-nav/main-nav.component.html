@@ -3,41 +3,41 @@
     <mat-toolbar color="primary">
       <div *ngIf="!(isScreenSmall$ | async); else menu" class="nav-wrapper">
         <div class="nav-wide-left">
-          <div class="logo">
+          <div class="mat-display-1">
             <span>DIAGEO</span>
           </div>
           <div class="nav-wide-left-items">
             <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent">
-              USERS
+              <span>USERS</span>
             </a>
             <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent">
-              PUBS
+              <span>PUBS</span>
             </a>
             <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent">
-              PRODUCTS
+              <span>PRODUCTS</span>
             </a>
             <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent">
-              BRANDS
+              <span>BRANDS</span>
             </a>
             <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent active-link">
-              CAMPAIGNS
+              <span>CAMPAIGNS</span>
             </a>
             <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent">
-              MESSAGES
+              <span>MESSAGES</span>
             </a>
             <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent">
-              QUIZZES
+              <span>QUIZZES</span>
             </a>
             <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
                routerLinkActive="mat-accent">
-              STATISTICS
+              <span class="text">STATISTICS</span>
             </a>
           </div>
         </div>
@@ -67,32 +67,32 @@
           <span>ADMIN XY</span>
         </div>
         <a [routerLink]="['/users']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
-          USERS
+          <span>USERS</span>
         </a>
         <a [routerLink]="['/pubs']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
-          PUBS
+          <span>PUBS</span>
         </a>
         <a [routerLink]="['/products']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          PRODUCTS
+          <span>PRODUCTS</span>
         </a>
         <a [routerLink]="['/brands']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
-          BRANDS
+          <span>BRANDS</span>
         </a>
         <a [routerLink]="['/campaigns']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          CAMPAIGNS
+          <span>CAMPAIGNS</span>
         </a>
         <a [routerLink]="['/messages']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          MESSAGES
+          <span>MESSAGES</span>
         </a>
         <a [routerLink]="['/quizzes']" mat-button class="mat-flat-button" color="primary" routerLinkActive="mat-accent">
           <span class="text">QUIZZES</span>
         </a>
         <a [routerLink]="['/statistics']" mat-button class="mat-flat-button" color="primary"
            routerLinkActive="mat-accent">
-          STATISTICS
+          <span>STATISTICS</span>
         </a>
         <button (click)="logout()" mat-button class="mat-flat-button" color="primary">
           <mat-icon>logout</mat-icon>
@@ -105,6 +105,9 @@
   </main>
   <footer>
     <mat-toolbar class="small-row">
+      <a class="go-top-button">
+        <mat-icon>expand_less</mat-icon>
+      </a>
       <div class="uppercase-font">
         © DIAGEO APP 2022. &nbsp;&nbsp; | &nbsp;&nbsp; SUPPORT &nbsp;&nbsp; | &nbsp;&nbsp; LEGAL
       </div>
