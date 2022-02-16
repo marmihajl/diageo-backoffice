@@ -14,21 +14,32 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@300;400;500&display=swap');
 
+@font-face {
+  font-family: 'Myriad-Pro-Regular';
+  src: url("assets/fonts/Myriad Pro Regular/Myriad Pro Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Myriad-Pro-Bold';
+  src: url("assets/fonts/Myriad Pro Bold/Myriad Pro Bold.ttf");
+}
+
 $fontConfig: (
-  display-4: mat.define-typography-level(112px, 112px, 300, 'PT Sans', -0.0134em),
-  display-3: mat.define-typography-level(56px, 56px, 400, 'PT Sans', -0.0089em),
-  display-2: mat.define-typography-level(45px, 48px, 400, 'PT Sans', 0.0000em),
-  display-1: mat.define-typography-level(34px, 40px, 400, 'PT Sans', 0.0074em),
-  headline: mat.define-typography-level(24px, 32px, 400, 'PT Sans', 0.0000em),
-  title: mat.define-typography-level(20px, 32px, 500, 'PT Sans Caption', 0.0075em),
-  subheading-2: mat.define-typography-level(16px, 28px, 400, 'PT Sans', 0.0094em),
-  subheading-1: mat.define-typography-level(15px, 24px, 500, 'PT Sans', 0.0067em),
-  body-2: mat.define-typography-level(14px, 24px, 500, 'PT Sans', 0.0179em),
-  body-1: mat.define-typography-level(14px, 20px, 400, 'PT Sans', 0.0179em),
-  button: mat.define-typography-level(14px, 14px, 500, 'PT Sans', 0.0893em),
-  caption: mat.define-typography-level(12px, 20px, 400, 'PT Sans', 0.0333em),
-  input: mat.define-typography-level(inherit, 1.125, 400, 'PT Sans', 1.5px)
+  display-4: mat.define-typography-level(112px, 112px, 300, 'Myriad-Pro-Regular', -0.0134em),
+  display-3: mat.define-typography-level(56px, 56px, 400, 'Myriad-Pro-Regular', -0.0089em),
+  display-2: mat.define-typography-level(45px, 48px, 400, 'Myriad-Pro-Regular', 0.0000em),
+  display-1: mat.define-typography-level(34px, 40px, 400, 'Myriad-Pro-Regular', 0.0074em),
+  headline: mat.define-typography-level(24px, 32px, 400, 'Myriad-Pro-Regular', 0.0000em),
+  title: mat.define-typography-level(40px, 40px, 500, 'Myriad-Pro-Regular', 0.0075em),
+  subheading-2: mat.define-typography-level(16px, 28px, 400, 'Myriad-Pro-Regular', 0.0094em),
+  subheading-1: mat.define-typography-level(15px, 24px, 500, 'Myriad-Pro-Regular', 0.0067em),
+  body-2: mat.define-typography-level(14px, 24px, 500, 'Myriad-Pro-Regular', 0.0179em),
+  body-1: mat.define-typography-level(14px, 20px, 400, 'Myriad-Pro-Regular', 0.0179em),
+  button: mat.define-typography-level(14px, 14px, 500, 'Myriad-Pro-Regular', 0.0893em),
+  caption: mat.define-typography-level(12px, 20px, 400, 'Myriad-Pro-Regular', 0.0333em),
+  input: mat.define-typography-level(inherit, 1.125, 400, 'Myriad-Pro-Regular', 1.5px),
 );
+
 
 // Foreground Elements
 
@@ -258,9 +269,10 @@ $altTheme: (
   font-size: 24px;
   font-family: 'Material Icons', 'Material Icons';
   .mat-badge-content {
-    font-family: 'PT Sans';
+    font-family: 'Myriad-Pro-Regular';
   }
 }
+
 
 html, body {
   height: 100%;
