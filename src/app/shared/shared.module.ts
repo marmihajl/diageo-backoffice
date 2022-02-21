@@ -10,17 +10,18 @@ import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     MainNavComponent,
-    HttpTableComponent
+    HttpTableComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     MainNavComponent,
-    HttpTableComponent
+    HttpTableComponent,
+    HttpClientModule
   ]
 })
 export class SharedModule {

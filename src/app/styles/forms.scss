@@ -1,9 +1,10 @@
 mat-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   text-align: center;
   padding: 40px;
   background-color: #ECE9E6;
+  border-radius: 5px;
   &.mat-card-wide {
     max-width: 1024px;
   }
@@ -12,6 +13,7 @@ mat-card {
 mat-form-field {
   display: block;
 }
+
 
 .center-page {
   width: 100%;
@@ -30,9 +32,10 @@ mat-form-field {
   background: #75123B;
   color: #fff;
   display: block;
-  border-radius: 0 0 2px 2px;
+  border-radius: 0 0 5px 5px;
   position: absolute;
   left: 0;
   bottom: 0;
   max-height: 50px;
+  border-style: none;
 }

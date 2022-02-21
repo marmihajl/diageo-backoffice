@@ -2,13 +2,14 @@
   position: relative;
   min-height: 200px;
   overflow: auto;
+  border-radius: 5px 5px 0 0;
 }
 .loading-shade {
   position: absolute;
   top: 60px;
-  left: 20px;
-  bottom: 20px;
-  right: 20px;
+  left: 30px;
+  bottom: 0;
+  right: 30px;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
   display: flex;
@@ -47,4 +48,5 @@ table {
 
 mat-paginator {
   background-color: #D9D3CE;
+  border-radius: 0 0 5px 5px;
 }
