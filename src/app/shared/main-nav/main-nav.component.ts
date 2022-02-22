@@ -15,9 +15,9 @@ export class MainNavComponent implements OnInit {
   public isAuthenticated$: Observable<boolean> | undefined;
   public isScreenSmall$: Observable<boolean> | undefined;
 
-  constructor (public authenticationService: AuthService) {
+  constructor (public authService: AuthService) {
 
-    this.isAuthenticated$ = this.authenticationService.isAuthenticated
+    this.isAuthenticated$ = this.authService.isAuthenticated
   }
 
   ngOnInit () {
@@ -35,6 +35,6 @@ export class MainNavComponent implements OnInit {
   }
 
   logout () {
-    this.authenticationService.logout();
+    this.authService.logout()
   }
 }

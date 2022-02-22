@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: QUIZZES_PATH, loadChildren: () => import('./pages/quizzes/quizzes.module').then(m => m.QuizzesModule) },
   { path: STATISTICS_PATH, loadChildren: () => import('./pages/statistics/statistics.module').then(m => m.StatisticsModule) },
   { path: MESSAGES_PATH, loadChildren: () => import('./pages/messages/messages.module').then(m => m.MessagesModule) },
-  { path: '**',redirectTo: '/messages' }
 ];
 
 @NgModule({

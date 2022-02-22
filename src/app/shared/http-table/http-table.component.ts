@@ -1,17 +1,19 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { MatPaginator } from "@angular/material/paginator";
-import { MatSort, SortDirection } from "@angular/material/sort";
-import { HttpClient } from "@angular/common/http";
-import { catchError, merge, Observable, switchMap } from "rxjs";
-import { map, startWith } from "rxjs/operators";
+import {HttpClient} from '@angular/common/http';
+import {Component, ViewChild, AfterViewInit} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort, SortDirection} from '@angular/material/sort';
+import {merge, Observable, of as observableOf} from 'rxjs';
+import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 
+/**
+ * @title Table retrieving data through HTTP
+ */
 @Component({
   selector: 'app-http-table',
-  templateUrl: './http-table.component.html',
-  styleUrls: ['./http-table.component.scss']
+  styleUrls: ['http-table.component.scss'],
+  templateUrl: 'http-table.component.html',
 })
 export class HttpTableComponent implements AfterViewInit {
-
   displayedColumns: string[] = ['created', 'state', 'number', 'title'];
   exampleDatabase: ExampleHttpDatabase | null = null;
   data: GithubIssue[] = [];
@@ -23,7 +25,7 @@ export class HttpTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _httpClient: HttpClient) { }
+  constructor(private _httpClient: HttpClient) {}
 
   ngAfterViewInit() {
     this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
@@ -38,7 +40,7 @@ export class HttpTableComponent implements AfterViewInit {
           this.isLoadingResults = true;
           return this.exampleDatabase!.getRepoIssues(
             this.sort.active, this.sort.direction, this.paginator.pageIndex, this.paginator.pageSize)
-
+            .pipe(catchError(() => observableOf(null)));
         }),
         map(data => {
           // Flip flag to show that loading has finished.
@@ -52,9 +54,7 @@ export class HttpTableComponent implements AfterViewInit {
           // Only refresh the result length if there is new data. In case of rate
           // limit errors, we do not want to reset the paginator to zero, as that
           // would prevent users from re-triggering requests.
-          // @ts-ignore
           this.resultsLength = data.total_count;
-          // @ts-ignore
           return data.items;
         })
       ).subscribe(data => this.data = data);

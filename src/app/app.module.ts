@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./core/material/material.module";
 import { LayoutModule } from '@angular/cdk/layout';
 import { SharedModule } from "./shared/shared.module";
+import { AuthGuard } from "./core/guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { SharedModule } from "./shared/shared.module";
     MaterialModule,
     SharedModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   exports: [],
   bootstrap: [ AppComponent ]
 })

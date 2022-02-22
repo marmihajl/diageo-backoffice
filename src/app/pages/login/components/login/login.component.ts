@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AuthService } from "../../../../services/auth/auth.service";
-import { ActivatedRoute, Router } from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from "../../../../core/services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
   public loginInvalid = false;
   private formSubmitAttempt = false;
-  private returnUrl!: string;
   public hidePassword = true;
 
   constructor(
@@ -21,17 +20,16 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authService: AuthService
   ) {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/messages';
 
     this.form = this.fb.group({
-      username: [ '', Validators.required ],
-      password: [ '', Validators.required ]
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
   async ngOnInit(): Promise<void> {
     if (await this.authService.checkAuthenticated()) {
-      await this.router.navigate([ this.returnUrl ]);
+      await this.router.navigate(['/home']);
     }
   }
 
@@ -42,7 +40,7 @@ export class LoginComponent implements OnInit {
       try {
         const username = this.form.get('username')?.value;
         const password = this.form.get('password')?.value;
-        await this.authService.login(username, password, this.returnUrl);
+        await this.authService.login(username, password);
       } catch (err) {
         this.loginInvalid = true;
       }

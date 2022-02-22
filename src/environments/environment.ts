@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:4200/api',
-  APP_NAME: 'diageo'
+  apiUrl: 'http://localhost:4200/api'
 };
 
 /*
